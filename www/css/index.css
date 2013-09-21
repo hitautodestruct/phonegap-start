@@ -115,7 +115,9 @@ h1 {
 }
 
 #output {
-    background-color: navy;
+    background-color: #efefef;
     width: 80%;
     min-height: 1em;
+    padding: .3em;
+    color: black;
 }
