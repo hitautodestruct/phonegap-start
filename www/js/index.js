@@ -28,7 +28,8 @@ var showFileList = function () {
     
     requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
                 
-        console_log("Root = " + fs.root.fullPath);
+        //console_log(fs.root.fullPath);
+        console_log('Hello');
         
         var directoryReader = fs.root.createReader();
         
