@@ -16,6 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+var console_log = function ( logdata ) {
+
+    document.querySelector('output').innerText = JSON.stringify( logdata );
+    
+};
+
+
+var showFileList = function () {
+    
+    requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
+                
+        console_log("Root = " + fs.root.fullPath);
+        
+        var directoryReader = fs.root.createReader();
+        
+        directoryReader.readEntries(function(entries) {
+            var i;
+            
+            //console_log(entries);
+            
+            //for (i=0; i<entries.length; i++) {
+                
+                
+    
+            //}
+        }, function (error) {
+            alert(error.code);
+        })
+    }, function (error) {
+           alert(error.code);
+    });
+    
+};
+ 
 var app = {
     // Application Constructor
     initialize: function() {
@@ -44,6 +79,8 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+        showFileList();
+
+        //console.log('Received Event: ' + id);
     }
 };
